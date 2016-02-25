@@ -16,5 +16,11 @@
   "repository": { "url": "git+https://github.com/streetstrider/flyd-glob.git", "type": "git" },
         "bugs": { "url": "https://github.com/streetstrider/flyd-glob/issues" },
 
-  "main": "glob.js"
+  "main": "glob.js",
+
+  "peerDependencies":
+  {
+    "flyd":
+      "^0.2"
+  }
 }
