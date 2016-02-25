@@ -11,3 +11,5 @@ flyd.on(console.log, globstream)
 ## API
 glob(string) → stream
 glob(array of strings) → stream
+glob(string, options) → stream
+glob(array of strings, options) → stream

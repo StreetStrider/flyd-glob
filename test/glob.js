@@ -12,9 +12,9 @@ describe('glob', () =>
 		{
 			expect(glob).a('function')
 		})
-		it('has arity of 1', () =>
+		it('has arity of 2', () =>
 		{
-			expect(glob).lengthOf(1)
+			expect(glob).lengthOf(2)
 		})
 		it('has descriptive name', () =>
 		{
@@ -22,16 +22,30 @@ describe('glob', () =>
 		})
 	})
 
-	describe('arguments', () =>
+	describe('instantiates', () =>
 	{
 		it('glob(string) is ok', () =>
 		{
-			expect(flyd.isStream(glob('*.txt'))).true
+			isStream(glob('*.txt'))
 		})
 		it('glob(array of strings) is ok', () =>
 		{
-			expect(flyd.isStream(glob([]))).true
-			expect(flyd.isStream(glob([ '*.txt' ]))).true
+			isStream(glob([]))
+			isStream(glob([ '*.txt' ]))
+		})
+		it('glob(string, options) is ok', () =>
+		{
+			isStream(glob('*.txt', { cwd: '.' }))
+		})
+		it('glob(array of strings, options) is ok', () =>
+		{
+			isStream(glob([], { cwd: '.' }))
+			isStream(glob([ '*.txt' ], { cwd: '.' }))
 		})
 	})
+
+	function isStream (it)
+	{
+		expect(flyd.isStream(it)).true
+	}
 })
