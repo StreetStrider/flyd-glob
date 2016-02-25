@@ -18,9 +18,22 @@
 
   "main": "glob.js",
 
+  "scripts":
+  {
+    "test": "mocha"
+  },
+
   "peerDependencies":
   {
     "flyd":
       "^0.2"
+  },
+  "devDependencies":
+  {
+    "mocha":
+      "^2.4",
+
+    "chai":
+      "^3.5"
   }
 }
