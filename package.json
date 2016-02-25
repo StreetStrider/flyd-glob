@@ -1,0 +1,20 @@
+{
+     "name": "flyd-glob",
+  "version": "0.0.0",
+
+  "description": "file glob and watch for Flyd",
+      "license": "MIT",
+       "author": "StreetStrider <teamfortresslife@gmail.com>",
+
+  "keywords":
+  [
+    "flyd", "glob", "fnmatch", "watch",
+    "vinyl", "vinyl-fs"
+  ],
+
+    "homepage":          "https://github.com/streetstrider/flyd-glob",
+  "repository": { "url": "git+https://github.com/streetstrider/flyd-glob.git", "type": "git" },
+        "bugs": { "url": "https://github.com/streetstrider/flyd-glob/issues" },
+
+  "main": "glob.js"
+}
