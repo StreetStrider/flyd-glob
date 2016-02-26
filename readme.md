@@ -10,7 +10,11 @@ flyd.on(console.log, globstream)
 ```
 
 ## API
+```js
 glob(string) → stream
 glob(array of strings) → stream
 glob(string, options) → stream
 glob(array of strings, options) → stream
+```
+> get stream of filenames matching certain glob expr in **string** or any
+of glob exprs in **array of strings**. stream will emit all filenames on next tick and then end.
