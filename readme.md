@@ -1,4 +1,4 @@
-# flyd-glob [![Travis](https://img.shields.io/travis/StreetStrider/flyd-glob.svg?style=flat-square)](https://travis-ci.org/StreetStrider/flyd-glob)
+# flyd-glob [![Travis](https://img.shields.io/travis/StreetStrider/flyd-glob.svg?style=flat-square)](https://travis-ci.org/StreetStrider/flyd-glob) [![Coveralls](https://img.shields.io/coveralls/StreetStrider/flyd-glob.svg?style=flat-square)](https://coveralls.io/github/StreetStrider/flyd-glob)
 
 ```js
 var flyd = require('flyd')
