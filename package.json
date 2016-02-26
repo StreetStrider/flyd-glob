@@ -29,10 +29,13 @@
     "globule":
       "^0.2"
   },
-  "peerDependencies":
+  "devDependencies":
   {
-    "flyd":
-      "^0.2",
+    "mocha":
+      "^2.4",
+
+    "chai":
+      "^3.5",
 
     "lodash.defer":
       "^4",
@@ -40,12 +43,9 @@
     "lodash.difference":
       "^4.1"
   },
-  "devDependencies":
+  "peerDependencies":
   {
-    "mocha":
-      "^2.4",
-
-    "chai":
-      "^3.5"
+    "flyd":
+      "^0.2"
   }
 }
