@@ -18,7 +18,7 @@ var watch = require('flyd-glob/watch')
 
 var gs = watch('**/*.js')
 
-/* watch on changed files, get their filenames */
+/* watch on changed files, get changes */
 flyd.on(console.log, gs)
 ```
 
