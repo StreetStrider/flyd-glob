@@ -60,6 +60,18 @@ describe('glob', () =>
 			var s = glob('**/*', { cwd: lil })
 			return streamEquals(s, [ 'dir', 'file-2.txt', 'file.txt', 'dir/file.txt' ])
 		})
+
+		it('glob(array of strings)', () =>
+		{
+			var s = glob([ '*.txt', '*/*' ], { cwd: lil })
+			return streamEquals(s, [ 'file-2.txt', 'file.txt', 'dir/file.txt' ])
+		})
+
+		it('glob(empty array)', () =>
+		{
+			var s = glob([], { cwd: lil })
+			return streamEquals(s, [])
+		})
 	})
 
 	function isStream (it)
