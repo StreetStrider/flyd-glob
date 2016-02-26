@@ -1,5 +1,7 @@
 # flyd-glob [![Travis](https://img.shields.io/travis/StreetStrider/flyd-glob.svg?style=flat-square)](https://travis-ci.org/StreetStrider/flyd-glob) [![Coveralls](https://img.shields.io/coveralls/StreetStrider/flyd-glob.svg?style=flat-square)](https://coveralls.io/github/StreetStrider/flyd-glob)
 
+file glob and watch for [Flyd](https://www.npmjs.com/package/flyd).
+
 ```js
 var flyd = require('flyd')
 var glob = require('flyd-glob')
