@@ -1,9 +1,6 @@
 
-var expect = require('chai').expect
 var lib = require('./_lib')
-
-var flyd   = require('flyd')
-var diff   = require('lodash.difference')
+var stream = require('./_stream')
 
 describe('glob', () =>
 {
@@ -18,21 +15,21 @@ describe('glob', () =>
 	{
 		it('glob(string) is ok', () =>
 		{
-			isStream(glob('*.txt'))
+			stream.isStream(glob('*.txt'))
 		})
 		it('glob(array of strings) is ok', () =>
 		{
-			isStream(glob([]))
-			isStream(glob([ '*.txt' ]))
+			stream.isStream(glob([]))
+			stream.isStream(glob([ '*.txt' ]))
 		})
 		it('glob(string, options) is ok', () =>
 		{
-			isStream(glob('*.txt', { cwd: '.' }))
+			stream.isStream(glob('*.txt', { cwd: '.' }))
 		})
 		it('glob(array of strings, options) is ok', () =>
 		{
-			isStream(glob([], { cwd: '.' }))
-			isStream(glob([ '*.txt' ], { cwd: '.' }))
+			stream.isStream(glob([], { cwd: '.' }))
+			stream.isStream(glob([ '*.txt' ], { cwd: '.' }))
 		})
 	})
 
@@ -50,55 +47,25 @@ describe('glob', () =>
 		it('glob(string)', () =>
 		{
 			var s = glob('*', { cwd: lil })
-			return streamEquals(s, [ 'dir', 'file-2.txt', 'file.txt' ])
+			return stream.streamEquals(s, [ 'dir', 'file-2.txt', 'file.txt' ])
 		})
 
 		it('glob(string)', () =>
 		{
 			var s = glob('**/*', { cwd: lil })
-			return streamEquals(s, [ 'dir', 'file-2.txt', 'file.txt', 'dir/file.txt' ])
+			return stream.streamEquals(s, [ 'dir', 'file-2.txt', 'file.txt', 'dir/file.txt' ])
 		})
 
 		it('glob(array of strings)', () =>
 		{
 			var s = glob([ '*.txt', '*/*' ], { cwd: lil })
-			return streamEquals(s, [ 'file-2.txt', 'file.txt', 'dir/file.txt' ])
+			return stream.streamEquals(s, [ 'file-2.txt', 'file.txt', 'dir/file.txt' ])
 		})
 
 		it('glob(empty array)', () =>
 		{
 			var s = glob([], { cwd: lil })
-			return streamEquals(s, [])
+			return stream.streamEquals(s, [])
 		})
 	})
-
-	function isStream (it)
-	{
-		expect(flyd.isStream(it)).true
-	}
-
-	function streamEquals (target, standard)
-	{
-		return concat(target)
-		.then((target) =>
-		{
-			expect(diff(target, standard)).empty
-		})
-	}
-
-	function concat (stream)
-	{
-		var cat = flyd.scan((memo, next) =>
-		{
-			return memo.concat([ next ])
-		}
-		, [])
-
-		stream = cat(stream)
-
-		return new Promise((rs) =>
-		{
-			flyd.on(() => rs(stream()), stream.end)
-		})
-	}
 })
