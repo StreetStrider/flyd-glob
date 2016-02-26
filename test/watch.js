@@ -6,7 +6,7 @@ describe('watch', () =>
 {
 	var watch = require('../watch')
 
-	describe('export', () =>
+	describe('exports', () =>
 	{
 		lib(watch, 'flyd__watch')
 	})

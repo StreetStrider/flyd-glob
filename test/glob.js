@@ -7,7 +7,7 @@ describe('glob', () =>
 {
 	var glob = require('../')
 
-	describe('export', () =>
+	describe('exports', () =>
 	{
 		lib(glob, 'flyd__glob')
 	})
