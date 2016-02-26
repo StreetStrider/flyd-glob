@@ -28,8 +28,14 @@
 
   "dependencies":
   {
+    "flyd":
+      "^0.2",
+
     "globule":
-      "^0.2"
+      "^0.2",
+
+    "lodash.defer":
+      "^4"
   },
   "devDependencies":
   {
@@ -47,9 +53,6 @@
 
     "istanbul-coveralls":
       "^1",
-
-    "lodash.defer":
-      "^4",
 
     "lodash.difference":
       "^4.1"
