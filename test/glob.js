@@ -48,26 +48,22 @@ describe('glob', () =>
 	{
 		var lil = __dirname + '/lil-fs'
 
-		var s = flyd.stream()
-
-		concat(s)
-		.then((v) =>
-		{
-			console.info('concatd')
-			console.log(v)
-		})
-
-		s(1)
-		s(2)
-		s(3)
-
-		s.end(true)
-
 		it('glob(string)', () =>
 		{
+			var s = flyd.stream()
 
+			try
+			{
+				return streamEquals(s, [ 1, 2, 3 ])
+			}
+			finally
+			{
+				s(1)
+				s(2)
+				s(3)
 
-
+				s.end(true)
+			}
 		})
 	})
 
@@ -78,6 +74,11 @@ describe('glob', () =>
 
 	function streamEquals (target, standard)
 	{
+		return concat(target)
+		.then((result) =>
+		{
+			expect(result).eql(standard)
+		})
 	}
 
 	function concat (stream)
