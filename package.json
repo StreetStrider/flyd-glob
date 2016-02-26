@@ -13,9 +13,9 @@
     "reactive", "functional", "async"
   ],
 
-    "homepage":          "https://github.com/streetstrider/flyd-glob",
+    "homepage":              "https://github.com/streetstrider/flyd-glob",
   "repository": { "url": "git+https://github.com/streetstrider/flyd-glob.git", "type": "git" },
-        "bugs": { "url": "https://github.com/streetstrider/flyd-glob/issues" },
+        "bugs": { "url":     "https://github.com/streetstrider/flyd-glob/issues" },
 
   "main": "glob.js",
 
