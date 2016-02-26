@@ -47,6 +47,13 @@ describe('glob', () =>
 
 	describe('works', () =>
 	{
+		/*
+			This test case only ensures that stream is working,
+			it does not test globs itself.
+			The glob functionality provided by `globule`,
+			please consult its tests for details
+			https://www.npmjs.com/package/globule
+		 */
 		var lil = __dirname + '/lil-fs'
 
 		it('glob(string)', () =>
