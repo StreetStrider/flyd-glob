@@ -18,6 +18,16 @@
         "bugs": { "url":     "https://github.com/streetstrider/flyd-glob/issues" },
 
   "main": "glob.js",
+  "files":
+  [
+    "glob.js",
+    "watch.js"
+  ],
+
+  "engines":
+  {
+    "node": ">=4"
+  },
 
   "scripts":
   {
