@@ -40,15 +40,18 @@ check its documentation for full list of options.
 **watch** (watch.js):
 
 > Get stream of changes of files matching certain glob expr in **string** or any
-of glob exprs in **array of strings**. Stream will emit filenames on file changings.
+of glob exprs in **array of strings**. Stream will emit changes.
 Stream will never end, unless you do it manually. If you force stream to end,
 it will release underlying watch utility.
 
 ```js
-watch(string) → stream of filenames
-watch(array of strings) → stream of filenames
-watch(string, options) → stream of filenames
-watch(array of strings, options) → stream of filenames
+watch(string) → stream of changes
+watch(array of strings) → stream of changes
+watch(string, options) → stream of changes
+watch(array of strings, options) → stream of changes
+
+change = [ event, filename ]
+event  = watch event
 ```
 
 watch engine is provided by [`chokidar`](https://www.npmjs.com/package/chokidar),
