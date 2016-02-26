@@ -21,7 +21,8 @@
 
   "scripts":
   {
-    "test": "mocha"
+     "test": "mocha",
+    "cover": "istanbul cover _mocha"
   },
 
   "dependencies":
@@ -39,6 +40,9 @@
 
     "chai":
       "^3.5",
+
+    "istanbul":
+      "^0.4",
 
     "lodash.defer":
       "^4",
