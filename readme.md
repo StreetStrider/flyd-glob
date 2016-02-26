@@ -4,17 +4,44 @@
 var flyd = require('flyd')
 var glob = require('flyd-glob')
 
-var globstream = glob('**/*.js')
+var gs = glob('**/*.js')
 
-flyd.on(console.log, globstream)
+/* subscribe on all filenames matched */
+flyd.on(console.log, gs)
+```
+
+```js
+var flyd  = require('flyd')
+var watch = require('flyd-glob/watch')
+
+var gs = watch('**/*.js')
+
+/* watch on changed files, get their filenames */
+flyd.on(console.log, gs)
 ```
 
 ## API
-```js
-glob(string) → stream
-glob(array of strings) → stream
-glob(string, options) → stream
-glob(array of strings, options) → stream
-```
+
+**glob** (glob.js):
+
 > get stream of filenames matching certain glob expr in **string** or any
 of glob exprs in **array of strings**. stream will emit all filenames on next tick and then end.
+
+```js
+glob(string) → stream of filenames
+glob(array of strings) → stream of filenames
+glob(string, options) → stream of filenames
+glob(array of strings, options) → stream of filenames
+```
+
+**watch** (watch.js):
+
+> get stream of changes of files matching certain glob expr in **string** or any
+of glob exprs in **array of strings**. stream will emit filenames on file changings
+
+```js
+watch(string) → stream of filenames
+watch(array of strings) → stream of filenames
+watch(string, options) → stream of filenames
+watch(array of strings, options) → stream of filenames
+```
