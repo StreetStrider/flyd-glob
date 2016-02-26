@@ -50,20 +50,8 @@ describe('glob', () =>
 
 		it('glob(string)', () =>
 		{
-			var s = flyd.stream()
-
-			try
-			{
-				return streamEquals(s, [ 1, 2, 3 ])
-			}
-			finally
-			{
-				s(1)
-				s(2)
-				s(3)
-
-				s.end(true)
-			}
+			var s = glob('*', { cwd: lil })
+			return streamEquals(s, [ 'dir', 'file-2.txt', 'file.txt' ])
 		})
 	})
 
@@ -96,7 +84,4 @@ describe('glob', () =>
 			flyd.on(() => rs(stream()), stream.end)
 		})
 	}
-
-	// 'dir', 'file-2.txt', 'file.txt'
-	// *
 })
