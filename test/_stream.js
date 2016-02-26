@@ -2,7 +2,10 @@
 var stream = module.exports = {}
 
 var flyd = require('flyd')
-var diff = require('lodash.difference')
+
+var diff  = require('lodash.differencewith')
+var equal = require('lodash.isequal')
+
 
 var expect = require('chai').expect
 
@@ -17,7 +20,9 @@ stream.streamEquals = function streamEquals (target, standard)
 	return concat(target)
 	.then((target) =>
 	{
-		expect(diff(target, standard)).empty
+		var delta = diff(target, standard, equal)
+
+		expect(delta).empty
 	})
 }
 

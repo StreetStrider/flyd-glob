@@ -57,7 +57,10 @@
     "istanbul-coveralls":
       "^1",
 
-    "lodash.difference":
+    "lodash.differencewith":
+      "^4.1",
+
+    "lodash.isequal":
       "^4.1"
   },
   "peerDependencies":
