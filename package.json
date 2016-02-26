@@ -35,7 +35,10 @@
       "^0.2",
 
     "lodash.defer":
-      "^4"
+      "^4",
+
+    "lodash.difference":
+      "^4.1"
   },
   "devDependencies":
   {

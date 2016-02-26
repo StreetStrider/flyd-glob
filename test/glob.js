@@ -1,6 +1,7 @@
 
 var expect = require('chai').expect
 var flyd   = require('flyd')
+var diff   = require('lodash.difference')
 
 describe('glob', () =>
 {
@@ -69,9 +70,9 @@ describe('glob', () =>
 	function streamEquals (target, standard)
 	{
 		return concat(target)
-		.then((result) =>
+		.then((target) =>
 		{
-			expect(result).eql(standard)
+			expect(diff(target, standard)).empty
 		})
 	}
 
