@@ -1,5 +1,7 @@
 
 var expect = require('chai').expect
+var lib = require('./_lib')
+
 var flyd   = require('flyd')
 var diff   = require('lodash.difference')
 
@@ -9,18 +11,7 @@ describe('glob', () =>
 
 	describe('export', () =>
 	{
-		it('exposes function', () =>
-		{
-			expect(glob).a('function')
-		})
-		it('has arity of 2', () =>
-		{
-			expect(glob).lengthOf(2)
-		})
-		it('has descriptive name', () =>
-		{
-			expect(glob.name).equal('flyd__glob')
-		})
+		lib(glob, 'flyd__glob')
 	})
 
 	describe('instantiates', () =>

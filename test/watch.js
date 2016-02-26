@@ -1,5 +1,6 @@
 
 var expect = require('chai').expect
+var lib = require('./_lib')
 
 describe('watch', () =>
 {
@@ -7,17 +8,6 @@ describe('watch', () =>
 
 	describe('export', () =>
 	{
-		it('exposes function', () =>
-		{
-			expect(watch).a('function')
-		})
-		it('has arity of 2', () =>
-		{
-			expect(watch).lengthOf(2)
-		})
-		it('has descriptive name', () =>
-		{
-			expect(watch.name).equal('flyd__watch')
-		})
+		lib(watch, 'flyd__watch')
 	})
 })
