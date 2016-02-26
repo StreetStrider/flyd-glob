@@ -31,6 +31,9 @@
   },
   "devDependencies":
   {
+    "flyd":
+      "^0.2",
+
     "mocha":
       "^2.4",
 
