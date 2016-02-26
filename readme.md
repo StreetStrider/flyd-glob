@@ -1,3 +1,5 @@
+[![Travis](https://img.shields.io/travis/StreetStrider/flyd-glob.svg?style=flat-square)](https://travis-ci.org/StreetStrider/flyd-glob)
+
 # flyd-glob
 ```js
 var flyd = require('flyd')
