@@ -53,6 +53,12 @@ describe('glob', () =>
 			var s = glob('*', { cwd: lil })
 			return streamEquals(s, [ 'dir', 'file-2.txt', 'file.txt' ])
 		})
+
+		it('glob(string)', () =>
+		{
+			var s = glob('**/*', { cwd: lil })
+			return streamEquals(s, [ 'dir', 'file-2.txt', 'file.txt', 'dir/file.txt' ])
+		})
 	})
 
 	function isStream (it)

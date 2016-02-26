@@ -24,10 +24,18 @@
     "test": "mocha"
   },
 
+  "dependencies":
+  {
+    "globule":
+      "^0.2"
+  },
   "peerDependencies":
   {
     "flyd":
-      "^0.2"
+      "^0.2",
+
+    "lodash.defer":
+      "^4"
   },
   "devDependencies":
   {
