@@ -32,7 +32,7 @@ describe('watch', () =>
 		{
 			var s = watch('*', { cwd: lil })
 
-			setTimeout(() => s.end(true), 250)
+			setTimeout(() => s.end(true), 10)
 
 			return stream.streamEquals(s,
 			[
@@ -46,7 +46,7 @@ describe('watch', () =>
 		{
 			var s = watch('**/*', { cwd: lil })
 
-			setTimeout(() => s.end(true), 250)
+			setTimeout(() => s.end(true), 10)
 
 			return stream.streamEquals(s,
 			[
@@ -61,7 +61,7 @@ describe('watch', () =>
 		{
 			var s = watch([ '*.txt', '*/*' ], { cwd: lil })
 
-			setTimeout(() => s.end(true), 250)
+			setTimeout(() => s.end(true), 10)
 
 			return stream.streamEquals(s,
 			[
@@ -75,7 +75,7 @@ describe('watch', () =>
 		{
 			var s = watch([], { cwd: lil })
 
-			setTimeout(() => s.end(true), 250)
+			setTimeout(() => s.end(true), 10)
 
 			return stream.streamEquals(s, [])
 		})
