@@ -34,6 +34,9 @@ glob(string, options) → stream of filenames
 glob(array of strings, options) → stream of filenames
 ```
 
+glob engine is provided by [`globule`](https://www.npmjs.com/package/globule),
+check its documentation for full list of options.
+
 **watch** (watch.js):
 
 > Get stream of changes of files matching certain glob expr in **string** or any
@@ -47,3 +50,6 @@ watch(array of strings) → stream of filenames
 watch(string, options) → stream of filenames
 watch(array of strings, options) → stream of filenames
 ```
+
+watch engine is provided by [`chokidar`](https://www.npmjs.com/package/chokidar),
+check its documentation for full list of options.
