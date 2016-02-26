@@ -9,7 +9,8 @@
   "keywords":
   [
     "flyd", "glob", "fnmatch", "watch",
-    "vinyl", "vinyl-fs"
+    "vinyl", "vinyl-fs",
+    "reactive", "functional", "async"
   ],
 
     "homepage":          "https://github.com/streetstrider/flyd-glob",
