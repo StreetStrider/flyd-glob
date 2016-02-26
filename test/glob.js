@@ -1,5 +1,6 @@
 
 var lib = require('./_lib')
+var inst = require('./_inst')
 var stream = require('./_stream')
 
 describe('glob', () =>
@@ -13,24 +14,7 @@ describe('glob', () =>
 
 	describe('instantiates', () =>
 	{
-		it('glob(string) is ok', () =>
-		{
-			stream.isStream(glob('*.txt'))
-		})
-		it('glob(array of strings) is ok', () =>
-		{
-			stream.isStream(glob([]))
-			stream.isStream(glob([ '*.txt' ]))
-		})
-		it('glob(string, options) is ok', () =>
-		{
-			stream.isStream(glob('*.txt', { cwd: '.' }))
-		})
-		it('glob(array of strings, options) is ok', () =>
-		{
-			stream.isStream(glob([], { cwd: '.' }))
-			stream.isStream(glob([ '*.txt' ], { cwd: '.' }))
-		})
+		inst(glob, 'glob')
 	})
 
 	describe('works', () =>
