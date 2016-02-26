@@ -44,8 +44,58 @@ describe('glob', () =>
 		})
 	})
 
+	describe('works', () =>
+	{
+		var lil = __dirname + '/lil-fs'
+
+		var s = flyd.stream()
+
+		concat(s)
+		.then((v) =>
+		{
+			console.info('concatd')
+			console.log(v)
+		})
+
+		s(1)
+		s(2)
+		s(3)
+
+		s.end(true)
+
+		it('glob(string)', () =>
+		{
+
+
+
+		})
+	})
+
 	function isStream (it)
 	{
 		expect(flyd.isStream(it)).true
 	}
+
+	function streamEquals (target, standard)
+	{
+	}
+
+	function concat (stream)
+	{
+		var cat = flyd.scan((memo, next) =>
+		{
+			return memo.concat([ next ])
+		}
+		, [])
+
+		stream = cat(stream)
+
+		return new Promise((rs) =>
+		{
+			flyd.on(() => rs(stream()), stream.end)
+		})
+	}
+
+	// 'dir', 'file-2.txt', 'file.txt'
+	// *
 })
