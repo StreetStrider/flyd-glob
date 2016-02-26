@@ -56,3 +56,6 @@ event  = watch event
 
 watch engine is provided by [`chokidar`](https://www.npmjs.com/package/chokidar),
 check its documentation for full list of options.
+
+## license
+MIT © 2016 StreetStrider.
