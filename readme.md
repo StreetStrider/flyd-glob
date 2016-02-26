@@ -24,8 +24,8 @@ flyd.on(console.log, gs)
 
 **glob** (glob.js):
 
-> get stream of filenames matching certain glob expr in **string** or any
-of glob exprs in **array of strings**. stream will emit all filenames on next tick and then end.
+> Get stream of filenames matching certain glob expr in **string** or any
+of glob exprs in **array of strings**. Stream will emit all filenames on next tick and then end.
 
 ```js
 glob(string) → stream of filenames
@@ -36,8 +36,10 @@ glob(array of strings, options) → stream of filenames
 
 **watch** (watch.js):
 
-> get stream of changes of files matching certain glob expr in **string** or any
-of glob exprs in **array of strings**. stream will emit filenames on file changings
+> Get stream of changes of files matching certain glob expr in **string** or any
+of glob exprs in **array of strings**. Stream will emit filenames on file changings.
+Stream will never end, unless you do it manually. If you force stream to end,
+it will release underlying watch utility.
 
 ```js
 watch(string) → stream of filenames
