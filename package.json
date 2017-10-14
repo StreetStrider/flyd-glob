@@ -42,13 +42,13 @@
       "^0.2",
 
     "globule":
-      "^0.2",
+      "1",
 
     "chokidar":
-      "^1.4",
+      "1.7",
 
     "lodash.defer":
-      "^4"
+      "4"
   },
   "devDependencies":
   {
