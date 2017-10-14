@@ -28,6 +28,11 @@
   {
     "node": ">=4"
   },
+  "peerDependencies":
+  {
+    "flyd":
+      "0.2"
+  },
 
   "scripts":
   {
@@ -38,9 +43,6 @@
 
   "dependencies":
   {
-    "flyd":
-      "^0.2",
-
     "globule":
       "1",
 
@@ -53,7 +55,7 @@
   "devDependencies":
   {
     "flyd":
-      "^0.2",
+      "0.2",
 
     "mocha":
       "^2.4",
@@ -72,10 +74,5 @@
 
     "lodash.isequal":
       "^4.1"
-  },
-  "peerDependencies":
-  {
-    "flyd":
-      "^0.2"
   }
 }
