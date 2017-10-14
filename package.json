@@ -58,21 +58,21 @@
       "0.2",
 
     "mocha":
-      "^2.4",
+      "4",
 
     "chai":
-      "^3.5",
+      "4",
 
     "istanbul":
-      "^0.4",
+      "0.4",
 
     "istanbul-coveralls":
-      "^1",
+      "1",
 
     "lodash.differencewith":
-      "^4.1",
+      "4.1",
 
     "lodash.isequal":
-      "^4.1"
+      "4.1"
   }
 }
