@@ -26,7 +26,7 @@
 
   "engines":
   {
-    "node": ">=4"
+    "node": ">=6"
   },
   "peerDependencies":
   {
@@ -36,7 +36,7 @@
 
   "scripts":
   {
-         "test": "mocha",
+         "test": "mocha test/",
         "cover": "istanbul cover _mocha",
     "coveralls": "istanbul-coveralls"
   },

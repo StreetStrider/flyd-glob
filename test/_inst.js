@@ -5,20 +5,29 @@ module.exports = function (fn, name)
 {
 	it(name + '(string) is ok', () =>
 	{
-		stream.isStream(fn('*.txt'))
+		against(fn, '*.txt')
 	})
 	it(name + '(array of strings) is ok', () =>
 	{
-		stream.isStream(fn([]))
-		stream.isStream(fn([ '*.txt' ]))
+		against(fn, [])
+		against(fn, [ '*.txt' ])
 	})
 	it(name + '(string, options) is ok', () =>
 	{
-		stream.isStream(fn('*.txt', { cwd: '.' }))
+		against(fn, '*.txt', { cwd: '.' })
 	})
 	it(name + '(array of strings, options) is ok', () =>
 	{
-		stream.isStream(fn([], { cwd: '.' }))
-		stream.isStream(fn([ '*.txt' ], { cwd: '.' }))
+		against(fn, [], { cwd: '.' })
+		against(fn, [ '*.txt' ], { cwd: '.' })
 	})
+}
+
+function against (fn, ...args)
+{
+	var s = fn(...args)
+
+	stream.isStream(s)
+
+	setTimeout(() => s.end(true), 10)
 }
